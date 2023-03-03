@@ -1,0 +1,41 @@
+<div class="outer">
+  <div class="container">
+      <a routerLink=""><mat-icon>arrow_back</mat-icon></a>
+      <h1>Regisztráció</h1>
+
+      <label for="email" class="input_lab">
+        E-mail cím:
+        <input [(ngModel)]="email" type="email" name="email" id="email" placeholder="example@example.hu">
+      </label>
+      <label for="password" class="input_lab">
+        Jelszó:
+        <div class="password_cont">
+          <input [(ngModel)]="password" type="password" name="password" id="password">
+          <a class="password_btn" id="password_btn"><mat-icon style="width: 12px; height: 12px; font-size: 12px; line-height: 12px; padding: 6px;">visibility</mat-icon> Jelszó mutatása</a>
+        </div>
+      </label>
+      <label for="password_again" class="input_lab">
+        Jelszó ismétlés:
+        <div class="password_cont">
+          <input [(ngModel)]="password_cont" type="password" name="password_again" id="password_again">
+          <a class="password_btn" id="password_again_btn"><mat-icon style="width: 12px; height: 12px; font-size: 12px; line-height: 12px; padding: 6px;">visibility</mat-icon> Jelszó mutatása</a>
+        </div>
+      </label>
+      <label for="firstname" class="input_lab">
+        Vezetéknév:
+        <input [(ngModel)]="firstname" type="text" name="firstname" id="firstname" placeholder="vezetéknév">
+      </label>
+      <label for="lastname" class="input_lab">
+        Keresztnév:
+        <input [(ngModel)]="lastname" type="text" name="lastname" id="lastname" placeholder="keresztnév">
+      </label>
+      <label for="isTeacher" class="input_lab">
+        Tanár?
+        <input [(ngModel)]="isTeacher" type="checkbox" name="isTeacher" id="isTeacher">
+      </label>
+      <input type="submit" value="Regisztrálás" (click)="registration()">
+      <p class="error" id="error1">Ezzel az e-mail címmel már regisztráltak!</p>
+      <p class="error" id="error2">A regisztráció során hiba történt!</p>
+    <p style="margin-top: 25px;">Már van fiókja? <a routerLink="/login">Lépjen be!</a></p>
+  </div>
+</div>

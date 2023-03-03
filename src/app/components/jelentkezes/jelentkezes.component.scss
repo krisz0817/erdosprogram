@@ -1,0 +1,89 @@
+@import url(../css/input.scss);
+
+.jelentkezes_cont {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .event_details {
+        display: flex;
+        margin: 50px 0;
+
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        div {
+            display: flex;
+
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+    }
+
+    .user_details {
+        display: flex;
+        margin: 50px 0;
+
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        div {
+            display: flex;
+
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+    }
+
+    .food {
+        display: flex;
+        margin: 50px 0;
+
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        div {
+            display: flex;
+
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            label {
+                margin-right: 35px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .bed {
+        display: flex;
+        margin: 50px 0;
+
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        div {
+            display: flex;
+
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            label {
+                margin-right: 35px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+.submitBtn {
+  display: block;
+  width: max-content;
+  height: max-content;
+  padding: 15px 25px;
+  background-color: blue;
+  color: white;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}

@@ -1,0 +1,47 @@
+<div class="tarolo">
+  <h1>Cikkek</h1>
+  <div class="mat-elevation-z8">
+    <div class="table_actions">
+
+    </div>
+    <div class="container">
+      <table mat-table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="variable">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Név </th>
+          <td mat-cell *matCellDef="let element"> {{element.variable}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="value">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Érték </th>
+          <td mat-cell *matCellDef="let element"> {{element.value}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="modify">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Módosítás </th>
+          <td mat-cell *matCellDef="let element"> <button class="modifyBtn" (click)="modify(element)">Módosítás</button> </td>
+        </ng-container>
+
+        <ng-container matColumnDef="expandedDetail">
+          <td mat-cell *matCellDef="let element">
+              <p>Működik</p>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+            class="element_row"
+            >
+        </tr>
+      </table>
+    </div>
+    <mat-paginator [pageSizeOptions]="[10, 25, 50]"
+      showFirstLastButtons>
+    </mat-paginator>
+  </div>
+
+  <div id="modify_area">
+    <h2>Módosítás</h2>
+    <input title="modify" [(ngModel)]="value" type="text" id="modify_oneliner"> <app-text-editor id="text-editor"></app-text-editor><app-upload-files id="modify_file"></app-upload-files> <button class="modifyBtn" style="margin-top: 25px; margin-right: 25px;" (click)="cancel()">Mégse</button> <button class="modifyBtn" (click)="save()">Mentés</button>
+  </div>
+</div>

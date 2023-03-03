@@ -1,0 +1,48 @@
+<h2 style="padding: 0 50px; margin-top: 50px;">
+    Cikk módosítása
+</h2>
+
+<form class="new_art">
+    <div class="data">
+        <div class="text">
+            <label id="art_title_lab" for="art_title" class="input_lab">
+                Cím:
+                <input [(ngModel)]="article.title" type="text" name="art_title" id="art_title" placeholder="art_title">
+            </label>
+            <label for="art_page" class="input_lab">
+                Aloldal:
+                <select [(ngModel)]='article.page_id' name="art_page" id="art_page">
+                    <option  *ngFor="let page of pages;" value="{{page.id}}">{{page.real_name}}                    
+                    </option>
+                </select>
+            </label>
+            <label class="checkbox_lab" for="art_fav">
+                Hozzáadás a képnézegetőhöz
+                <input [(ngModel)]="article.swiper" type="checkbox" name="art_fav" id="art_fav">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+        <div class="text">
+            <label id="art_source_lab" for="art_source" class="input_lab">
+                Forrás:
+                <input [(ngModel)]="article.src" type="text" name="art_source" id="art_source" placeholder="https://www.example.hu/">
+            </label>
+            <label *ngIf="checkDijazott()" id="art_year_lab" for="art_year" class="input_lab">
+                Évszám:
+                <input [(ngModel)]="article.year" type="number" name="art_year" id="art_year" placeholder="2022">
+            </label>            
+        </div>
+        <div class="img_up">
+            <p>Kép hozzáadása</p>
+            <p>
+                * Csak .jpg, .jpeg, .png elfogadott, maximum 25MB méretben!
+            </p>
+            <app-upload-files></app-upload-files>
+        </div>
+    </div>
+    <div class="editor">
+        <app-text-editor></app-text-editor>
+    </div>
+
+    <input (click)="modifyArticle()" type="submit" value="Módosítás">
+</form>

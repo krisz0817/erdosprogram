@@ -1,0 +1,79 @@
+<h2 style="padding: 0 50px; margin-top: 50px;">
+  Új foglalkozás létrehozása
+</h2>
+
+<form class="new_event">
+  <div class="data">
+      <div class="text">
+        <h3>Alap adatok</h3>
+
+        <label id="event_name_lab" for="event_name" class="input_lab">
+          Cím:
+          <input [(ngModel)]="event.name" type="text" name="event_name" id="event_name" placeholder="Veszprémi foglalkozás">
+        </label>
+        <label id="event_location_lab" for="event_location" class="input_lab">
+          Foglalkozás helyszíne:
+          <input [(ngModel)]="event.location" type="text" name="event_location" id="event_location" placeholder="event_location">
+        </label>
+        <label id="event_start_date_lab" for="event_start_date" class="input_lab">
+          Foglalkozás kezdete:
+          <input [(ngModel)]="event.start_date" type="date" name="event_start_date" id="event_start_date" placeholder="event_start_date">
+        </label>
+        <label id="event_end_date_lab" for="event_end_date" class="input_lab">
+          Foglalkozás vége:
+          <input [(ngModel)]="event.end_date" type="date" name="event_end_date" id="event_end_date" placeholder="event_end_date">
+        </label>
+        <label for="event_status" class="input_lab">
+          event_status:
+          <select [(ngModel)]='event.status_id' name="event_status" id="event_status">
+            <option  *ngFor="let status of statuses;" value="{{status.id}}">{{status.name}}                    
+            </option>
+          </select>
+        </label>
+      </div>
+      <div class="prices">
+        <h3>Étkeztetés árak</h3>
+
+        <label id="event_friday_lunch_lab" for="event_friday_lunch" class="input_lab">
+          Péntek ebéd:
+          <input [(ngModel)]='event.friday_lunch' type="number" name="event_friday_lunch" id="event_friday_lunch" placeholder="2000">
+        </label>
+        <label id="event_friday_dinner_lab" for="event_friday_dinner" class="input_lab">
+          Péntek vacsora:
+          <input [(ngModel)]='event.friday_dinner' type="number" name="event_friday_dinner" id="event_friday_dinner" placeholder="2000">
+        </label>
+        <label id="event_saturday_breakfast_lab" for="event_saturday_breakfast" class="input_lab">
+          Szombat reggeli:
+          <input [(ngModel)]='event.saturday_breakfast' type="number" name="event_saturday_breakfast" id="event_saturday_breakfast" placeholder="2000">
+        </label>
+        <label id="event_saturday_lunch_lab" for="event_saturday_lunch" class="input_lab">
+          Szombat ebéd:
+          <input [(ngModel)]='event.saturday_lunch' type="number" name="event_saturday_lunch" id="event_saturday_lunch" placeholder="2000">
+        </label>
+        <label id="event_saturday_dinner_lab" for="event_saturday_dinner" class="input_lab">
+          Szombat vacsora:
+          <input [(ngModel)]='event.saturday_dinner' type="number" name="event_saturday_dinner" id="event_saturday_dinner" placeholder="2000">
+        </label>
+        <label id="event_sunday_breakfast_lab" for="event_sunday_breakfast" class="input_lab">
+          Vasárnap reggeli:
+          <input [(ngModel)]='event.sunday_breakfast' type="number" name="event_sunday_breakfast" id="event_sunday_breakfast" placeholder="2000">
+        </label>
+        <label id="event_sunday_lunch_lab" for="event_sunday_lunch" class="input_lab">
+          Vasárnap ebéd:
+          <input [(ngModel)]='event.sunday_lunch' type="number" name="event_sunday_lunch" id="event_sunday_lunch" placeholder="2000">
+        </label>
+
+        <h3>Szállás ára</h3>
+        <label id="event_friday_room_lab" for="event_friday_room" class="input_lab">
+          Péntek:
+          <input [(ngModel)]='event.friday_room' type="number" name="event_friday_room" id="event_friday_room" placeholder="5000">
+        </label>
+        <label id="event_saturday_room_lab" for="event_saturday_room" class="input_lab">
+          Szombat:
+          <input [(ngModel)]='event.saturday_room' type="number" name="event_saturday_room" id="event_saturday_room" placeholder="5000">
+        </label>
+      </div>
+  </div>
+
+  <input (click)="createEvent()" type="submit" value="Létrehozás">
+</form>

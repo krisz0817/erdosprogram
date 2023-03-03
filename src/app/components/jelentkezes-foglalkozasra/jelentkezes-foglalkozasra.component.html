@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="event" *ngFor="let event of events;">
+    <div class="main_info">
+      <div class="basic">
+        <h2>{{ event.name }}</h2>
+        <p>Hely: {{ event.location }}</p>
+      </div>
+      <div class="dates">
+        <p>{{ event.start_date }} - {{ event.end_date }}</p>
+      </div>
+    </div>
+
+    <div class="details" style="display: none;" id="details_{{ event.id }}">
+      <table>
+        <thead>
+          <tr>
+            <td colspan="2">Étkezés</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Péntek ebéd</td>
+            <td>{{ event.friday_lunch }} Ft</td>
+          </tr>
+          <tr>
+            <td>Péntek vacsora</td>
+            <td>{{ event.friday_dinner }} Ft</td>
+          </tr>
+          <tr>
+            <td>Szombat reggeli</td>
+            <td>{{ event.saturday_breakfast }} Ft</td>
+          </tr>
+          <tr>
+            <td>Szombat ebéd</td>
+            <td>{{ event.saturday_lunch }} Ft</td>
+          </tr>
+          <tr>
+            <td>Szombat vacsora</td>
+            <td>{{ event.saturday_dinner }} Ft</td>
+          </tr>
+          <tr>
+            <td>Vasárnap reggeli</td>
+            <td>{{ event.sunday_breakfast }} Ft</td>
+          </tr>
+          <tr>
+            <td>Vasárnap ebéd</td>
+            <td>{{ event.sunday_lunch }} Ft</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table>
+        <thead>
+          <tr>
+            <td colspan="2">Szállás</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Péntek</td>
+            <td>{{ event.friday_room }} Ft</td>
+          </tr>
+          <tr>
+            <td>Szombat</td>
+            <td>{{ event.saturday_room }} Ft</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="btn_cont">
+      <button class="secondary" (click)="details_btn(event.id)">Részletek</button>
+      <button class="primary" [routerLink]="['/jelentkezes', event.id]">Jelentkezés</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,101 @@
+<div class="jelentkezes_cont">
+  <div class="event_details">
+      <h2>Foglalkozás adatai</h2>
+
+      <div>
+          <p>{{ event.name }}</p>
+          <p>Helyszín: {{ event.location }}</p>
+          <p>{{ event.start_date }} - {{ event.end_date }}</p>
+      </div>
+  </div>
+
+  <div class="user_details">
+      <h2>Jelentkező adatai</h2>
+
+      <div>
+          <p>Név: {{ user.firstname }} {{ user.lastname }}</p>
+          <p>E-mail cím: {{ user.email }}</p>
+          <p>Osztály: {{ user.class }}</p>
+      </div>
+  </div>
+
+  <div class="food">
+      <h2>Étkezés</h2>
+
+      <div>
+          <label class="checkbox_lab" for="friday_lunch">
+              Péntek ebéd ({{ event.friday_lunch }} Ft)
+              <input [(ngModel)]="user_event.friday_lunch" type="checkbox" name="friday_lunch" id="friday_lunch" (change)="calculate()">
+              <span class="checkmark"></span>
+          </label>
+          <label class="checkbox_lab" for="friday_dinner">
+              Péntek vacsora ({{ event.friday_dinner }} Ft)
+              <input [(ngModel)]="user_event.friday_dinner" type="checkbox" name="friday_dinner" id="friday_dinner" (change)="calculate()">
+              <span class="checkmark"></span>
+          </label>
+          <label class="checkbox_lab" for="saturday_breakfast">
+              Szombat reggeli ({{ event.saturday_breakfast }} Ft)
+              <input [(ngModel)]="user_event.saturday_breakfast" type="checkbox" name="saturday_breakfast" id="saturday_breakfast" (change)="calculate()">
+              <span class="checkmark"></span>
+          </label>
+          <label class="checkbox_lab" for="saturday_lunch">
+              Szombat ebéd ({{ event.saturday_lunch }} Ft)
+              <input [(ngModel)]="user_event.saturday_lunch" type="checkbox" name="saturday_lunch" id="saturday_lunch" (change)="calculate()">
+              <span class="checkmark"></span>
+          </label>
+          <label class="checkbox_lab" for="saturday_dinner">
+              Szombat vacsora ({{ event.saturday_dinner }} Ft)
+              <input [(ngModel)]="user_event.saturday_dinner" type="checkbox" name="saturday_dinner" id="saturday_dinner" (change)="calculate()">
+              <span class="checkmark"></span>
+          </label>
+          <label class="checkbox_lab" for="sunday_breakfast">
+              Vasárnap reggeli ({{ event.sunday_breakfast }} Ft)
+              <input [(ngModel)]="user_event.sunday_breakfast" type="checkbox" name="sunday_breakfast" id="sunday_breakfast" (change)="calculate()">
+              <span class="checkmark"></span>
+          </label>
+          <label class="checkbox_lab" for="sunday_lunch">
+              Vasárnap ebéd ({{ event.sunday_lunch }} Ft)
+              <input [(ngModel)]="user_event.sunday_lunch" type="checkbox" name="sunday_lunch" id="sunday_lunch" (change)="calculate()">
+              <span class="checkmark"></span>
+          </label>
+      </div>
+  </div>
+
+  <div class="bed">
+      <h2>Szállás</h2>
+
+      <div>
+          <label class="checkbox_lab" for="friday_room">
+              Péntek szállás ({{ event.friday_room }} Ft)
+              <input [(ngModel)]="user_event.friday_room" type="checkbox" name="friday_room" id="friday_room" (change)="calculate()">
+              <span class="checkmark"></span>
+          </label>
+          <label class="checkbox_lab" for="saturday_room">
+              Szombat szállás ({{ event.saturday_room }} Ft)
+              <input [(ngModel)]="user_event.saturday_room" type="checkbox" name="saturday_room" id="saturday_room" (change)="calculate()">
+              <span class="checkmark"></span>
+          </label>
+      </div>
+  </div>
+
+  <span>Fizetendő: {{ user_event.total }} Ft</span>
+
+  <div class="billing_details">
+      <h2>Számlázási adatok</h2>
+
+      <label id="user_bill_name" for="bill_name" class="input_lab">
+          Számlázási név:
+          <input [(ngModel)]="user_event.billing_name" type="text" name="bill_name" id="bill_name" placeholder="">
+      </label>
+      <label id="user_bill_add" for="bill_add" class="input_lab">
+          Számlázási cím:
+          <input [(ngModel)]="user_event.billing_address" type="text" name="bill_add" id="bill_add" placeholder="Irányítószám, Város, utca házszám emelet ajtó">
+      </label>
+      <label id="comment" for="comment" class="input_lab">
+          Megjegyzés:
+          <input [(ngModel)]="user_event.comment" type="text" name="comment" id="comment" placeholder="Ha a számla megoszlik több személy között">
+      </label>
+  </div>
+
+  <button class="submitBtn" (click)="join()">Jelentkezés</button>
+</div>

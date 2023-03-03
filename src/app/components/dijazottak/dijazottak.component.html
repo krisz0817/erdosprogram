@@ -1,0 +1,11 @@
+<section class="news">
+    <div class="item-cont">
+      <div class="item" *ngFor="let article of articles">
+        <hr>
+        <span>Év: <a>{{ article.year }}</a></span>
+        <h2>{{ article.title }}</h2>
+        <img alt = "" src="{{ article.img }}" />
+        <a [routerLink]="['/article', article.id]">Tovább</a>
+      </div>
+    </div>
+  </section>

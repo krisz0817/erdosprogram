@@ -1,0 +1,10 @@
+<script src="image-resize.min.js"></script>
+
+<quill-editor id="quill-container" [styles]="{height: '70vh'}" 
+    [modules]="this.textEditor.modules"
+    [(ngModel)]="this.textEditor.content"
+    (onFocus)="this.textEditor.focus($event)" 
+    (onEditorChanged)="this.textEditor.changedEditor($event)" 
+    (onBlur)="this.textEditor.blur($event)" 
+    (onEditorCreated)="this.textEditor.created($event)" >
+</quill-editor>

@@ -1,0 +1,75 @@
+<div class="tarolo">
+  <h1>Tanárok</h1>
+  <div class="mat-elevation-z8">
+    <div class="table_actions">
+      <div>
+        <span style="margin-left: 35px;">{{selection.selected.length}} kiválasztva</span>
+        <button (click)="delete()" style="margin-left: 35px;">Törlés</button>
+        <button (click)="modify()">Módosítás</button>
+        <button (click)="new_from_selected()">Új létrehozása a kiválasztottból</button>
+        <input type="search" name="search" id="search" placeholder="Keresés" (keyup)="applyFilter($event)" style="min-width: 100px; width: 200px" #searchInput>
+      </div>
+      <div>
+        <button routerLink="../create-teacher">Hozzáadás</button>
+      </div>
+    </div>
+    <div class="container">
+      <table mat-table [dataSource]="dataSource" matSort>
+
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+          <th mat-header-cell *matHeaderCellDef>
+            <mat-checkbox (change)="$event ? toggleAllRows() : null"
+                          [checked]="selection.hasValue() && isAllSelected()"
+                          [indeterminate]="selection.hasValue() && !isAllSelected()"
+                          [aria-label]="checkboxLabel()"
+                          color="primary">
+            </mat-checkbox>
+          </th>
+          <td mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? selection.toggle(row) : null"
+                          [checked]="selection.isSelected(row)"
+                          [aria-label]="checkboxLabel(row)"
+                          color="primary">
+            </mat-checkbox>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="firstname">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Vezetéknév </th>
+          <td mat-cell *matCellDef="let element"> {{element.firstname}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="lastname">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Keresztnév </th>
+          <td mat-cell *matCellDef="let element"> {{element.lastname}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> E-mail cím </th>
+          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="phone">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Telefonszám </th>
+          <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+            (click)="selection.toggle(row)"
+            class="element_row">
+        </tr>
+
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="5">Nincs a keresésnek megfelelő adat! Keresés: "{{searchInput.value}}"</td>
+        </tr>
+      </table>
+    </div>
+    <mat-paginator [pageSizeOptions]="[10, 25, 50]"
+      showFirstLastButtons
+      aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+</div>

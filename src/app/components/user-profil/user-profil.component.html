@@ -1,0 +1,49 @@
+<div class="user_info">
+  <div class="user_name">
+      <h1>{{ user.firstname }} {{ user.lastname }}</h1>
+  </div>
+  <p><strong>Vezetéknév:</strong> {{ user.firstname }}</p>
+  <p><strong>Keresztnév:</strong> {{ user.lastname }}</p>
+  <p><strong>E-mail cím:</strong> {{ user.email }}</p>
+
+  <label for="user_class">
+      Osztály:
+      <input [(ngModel)]="user.class" type="number" name="user_class" id="user_class">
+  </label>
+
+  <label for="user_teacher">
+      Oktató:
+      <input [(ngModel)]="user.teacher" type="text" name="user_teacher" id="user_teacher">
+  </label>
+
+  <select name="schools" id="schools" [(ngModel)]="user.school_id">
+      <option value="null">"Válaszd ki iskolád"</option>
+      <option *ngFor="let school of schools" value="{{school.id}}">{{ school.name }}, {{ school.center }}</option>
+  </select>
+
+  <div class="btn_cont">
+      <button *ngIf="teacherAuthGuard.canActivate2()" (click)="export()">Export diákok</button>
+      <button (click)="toggleModifyPass()">Jelszó módosítása</button>
+      <button *ngIf="modifyPass">Mentés</button>
+      <button (click)="toggleModifyPass()" *ngIf="modifyPass">Mégse</button>
+  </div>
+
+  <label for="password" *ngIf="modifyPass">
+      Jelszó:
+      <input type="password" name="password" id="password" value="{{ user.password }}">
+  </label>
+
+  <label class="file_lab" *ngIf="user.role_id==3">
+      <strong>Nyilatkozat</strong> <br>
+      <a href="{{applicationFile16}}">Nyilatkozat 16 év és felettiek letöltése</a> <br>
+      <a href="{{applicationFileUnder16}}">Nyilatkozat 16 év alattiak letöltése</a>
+      <app-upload-files #cmp></app-upload-files>
+  </label>
+
+  <label class="file_lab" *ngIf="user.role_id==3">
+    <strong>Jelentkezési lap</strong> <br> <a href="{{statement_file}}">Jelentkezési lap</a>
+      <app-upload-files #cmp></app-upload-files>
+  </label>
+
+  <button (click)="modify()">Módosítás</button>
+</div>

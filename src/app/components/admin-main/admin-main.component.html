@@ -1,0 +1,35 @@
+<div class="navbar">
+  <div>
+    <button style="margin-right: 15px;" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a routerLink="/"><p id="navbar_title">[Erdos Program] Adminisztráció</p></a>
+  </div>
+  <div>
+    <button routerLink="create-article">Új cikk <mat-icon style="margin-left: 5px;">add</mat-icon></button>
+    <button routerLink="create-event">Új foglalkozás <mat-icon style="margin-left: 5px;">add</mat-icon></button>
+  </div>
+</div>
+<mat-drawer-container class="container">
+  <mat-drawer #drawer opened mode="side" class="sidepanel">
+    <a routerLink="cikkek" class="sidenav_link" routerLinkActive="sidenav_link_active">Cikkek</a>
+    <a routerLink="events" class="sidenav_link" routerLinkActive="sidenav_link_active">Foglalkozások</a>
+    <a routerLink="jelentkezettek" class="sidenav_link" routerLinkActive="sidenav_link_active">Jelentkezettek</a>
+    <a routerLink="felhasznalok" class="sidenav_link" routerLinkActive="sidenav_link_active">Felhasználók</a>
+    <a routerLink="gallery" class="sidenav_link" routerLinkActive="sidenav_link_active">Galériák</a>
+    <a routerLink="leader" class="sidenav_link" routerLinkActive="sidenav_link_active">Vezetők</a>
+    <a routerLink="tanarok" class="sidenav_link" routerLinkActive="sidenav_link_active">Tanárok</a>
+    <a routerLink="school" class="sidenav_link" routerLinkActive="sidenav_link_active">Iskolák</a>
+    <a routerLink="archive" class="sidenav_link" routerLinkActive="sidenav_link_active">Archive</a>
+    <a routerLink="globalvars" class="sidenav_link" routerLinkActive="sidenav_link_active">GlobalVars</a>
+  </mat-drawer>
+  <mat-drawer-content class="content">
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+
+
+
+
+

@@ -1,0 +1,61 @@
+@import url(../css/input.scss);
+
+.new_event {
+    width: calc(100% - 100px);
+    padding: 50px;
+    .data {
+        width: 100%;
+        .text {
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: space-between;
+            align-items: center;
+
+            label {
+                margin: 0;
+                margin-right: 25px;
+                margin-bottom: 25px;
+            }
+
+            #event_title_lab {
+                width: 50%;
+                min-width: 300px;
+
+                #event_title {
+                    width: 100%;
+                }
+            }
+
+            h3 {
+              display: block;
+              width: 100%;
+            }
+        }
+
+        .prices {
+          display: flex;
+          width: 100%;
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-content: center;
+          justify-content: flex-start;
+          align-items: center;
+          margin-bottom: 50px;
+
+          label {
+              margin: 0;
+              margin-right: 25px;
+              margin-bottom: 25px;
+          }
+
+          h3 {
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+          }
+      }
+    }
+}

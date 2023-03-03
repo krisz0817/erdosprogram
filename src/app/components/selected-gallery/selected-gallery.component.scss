@@ -1,0 +1,112 @@
+.container {
+  display: grid;
+  width: fit-content;
+  max-width: 900px;
+  margin: 50px auto;
+
+  grid-template-columns: repeat(3, 300px);
+  grid-auto-rows: 300px;
+  counter-reset: div;
+  grid-gap: 10px;
+
+  .item:nth-child(6n + 1) {
+    grid-column: auto /span 2;
+    grid-row: auto /span 2;
+  }
+
+  .item:nth-child(6n + 2) {
+    grid-column: auto /span 1;
+    grid-row: auto /span 2;
+  }
+
+  .item:nth-child(6n + 3) {
+    grid-column: auto /span 2;
+    grid-row: auto /span 1;
+  }
+
+  .item:nth-child(6n + 4) {
+    grid-column: auto /span 1;
+    grid-row: auto /span 1;
+  }
+
+  .item:nth-child(6n + 5) {
+    grid-column: auto /span 1;
+    grid-row: auto /span 1;
+  }
+
+  .item:nth-child(6n + 6) {
+    grid-column: auto /span 1;
+    grid-row: auto /span 1;
+  }
+
+  .item:nth-child(6n + 7) {
+    grid-column: auto /span 1;
+    grid-row: auto /span 2;
+  }
+
+  .item:nth-child(6n + 8) {
+    grid-column: auto /span 1;
+    grid-row: auto /span 1;
+  }
+
+  .item:nth-child(6n + 9) {
+    grid-column: auto /span 1;
+    grid-row: auto /span 1;
+  }
+
+  .item:nth-child(6n + 10) {
+    grid-column: auto /span 1;
+    grid-row: auto /span 1;
+  }
+
+  .item {
+    background-color: #f5f5f5;
+    min-width: 300px;
+    min-height: 300px;
+    object-fit: cover;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: grayscale(1);
+
+    transition: 0.15s;
+
+    &:hover {
+      filter: grayscale(0);
+    }
+  }
+}
+
+@media screen and (max-width: 1301px) {
+  .container {
+    grid-template-columns: repeat(2, 300px);
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .container {
+    grid-template-columns: repeat(1, 300px);
+  }
+
+  .item:nth-child(6n + 1) {
+    grid-column: auto /span 1;
+    grid-row: auto /span 1;
+  }
+
+  .item:nth-child(6n + 2) {
+    grid-column: auto /span 1;
+    grid-row: auto /span 1;
+  }
+
+  .item:nth-child(6n + 3) {
+    grid-column: auto /span 1;
+    grid-row: auto /span 1;
+  }
+
+  .item:nth-child(6n + 7) {
+    grid-column: auto /span 1;
+    grid-row: auto /span 1;
+  }
+}
+

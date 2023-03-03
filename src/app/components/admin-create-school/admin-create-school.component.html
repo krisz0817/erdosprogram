@@ -1,0 +1,20 @@
+<h2 style="padding: 0 50px; margin-top: 50px;">
+    Új iskola hozzáadása
+</h2>
+
+<form class="new_art">
+    <div class="data">
+        <div class="text">
+            <label id="sch_name_lab" for="sch_name" class="input_lab">
+                Név:
+                <input [(ngModel)]="school.name" type="text" name="sch_name" id="sch_name" placeholder="sch_name">
+            </label>
+            <label id="sch_state_lab" for="sch_state" class="input_lab">
+                Megye:
+                <input [(ngModel)]="school.state" type="text" name="sch_state" id="sch_state" placeholder="sch_state">
+            </label>
+        </div>
+    </div>
+
+    <input (click)="createSchool()" type="submit" value="Hozzáadás">
+</form>

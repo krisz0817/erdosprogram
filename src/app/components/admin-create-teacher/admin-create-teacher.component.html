@@ -1,0 +1,50 @@
+<h2 style="padding: 0 50px; margin-top: 50px;">
+    Új tanár létrehozása
+</h2>
+
+<form class="new_art">
+    <div class="data">
+        <div class="text">
+            <label id="art_title_lab" for="teach_title" class="input_lab">
+                Titulus:
+                <input [(ngModel)]="teacher.title" type="text" name="teach_title" id="teach_title" placeholder="Dr">
+            </label>
+            <label id="art_title_lab" for="teach_firstname" class="input_lab">
+                Vezetéknév:
+                <input [(ngModel)]="teacher.firstname" type="text" name="teach_firstname" id="teach_firstname" placeholder="Vezetéknév">
+            </label>
+            <label id="art_title_lab" for="teach_lastname" class="input_lab">
+                Keresztnév:
+                <input [(ngModel)]="teacher.lastname" type="text" name="teach_lastname" id="teach_lastname" placeholder="Keresztnév">
+            </label>
+        </div>
+        <div class="text">
+            <label id="art_title_lab" for="teach_email" class="input_lab">
+                E-mail:
+                <input [(ngModel)]="teacher.email" type="email" name="teach_email" id="teach_email" placeholder="eamil@email.hu">
+            </label>
+        </div>
+        <div class="text">
+            <label id="art_title_lab" for="teach_phone" class="input_lab">
+                Telefonszám:
+                <input [(ngModel)]="teacher.phone" type="phone" name="teach_phone" id="teach_phone" placeholder="+36301234567">
+            </label>
+        </div>
+        <div class="cv_up">
+            <p>Önéletrajz hozzáadása</p>
+            <p>
+                * Csak .pdf elfogadott, maximum 25MB méretben!
+            </p>
+            <app-upload-files #cmp></app-upload-files>
+        </div>
+        <div class="img_up">
+            <p>Kép hozzáadása</p>
+            <p>
+                * Csak .jpg, .jpeg, .png elfogadott, maximum 25MB méretben!
+            </p>
+            <app-upload-files #cmp></app-upload-files>
+        </div>
+    </div>
+
+    <input (click)="createTeacher()" type="submit" value="Létrehozás">
+</form>

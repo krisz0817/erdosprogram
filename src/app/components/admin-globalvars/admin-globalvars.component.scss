@@ -1,0 +1,68 @@
+.tarolo {
+  padding: 50px;
+  width: calc(100% - 100px);
+  height: 100%;
+}
+
+.container {
+  max-height: 550px;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.element_row:hover {
+  background-color: whitesmoke;
+}
+
+#modify_area {
+  display: none;
+  margin-top: 25px;
+
+  #modify_oneliner {
+    display: none;
+    min-width: 300px;
+    min-height: 15px;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid blue;
+    margin-top: 10px;
+    background-color: #fff;
+  }
+
+  #text-editor {
+    display: none;
+  }
+
+  #modify_file {
+    display: none;
+  }
+}
+
+.modifyBtn {
+  width: max-content;
+  height: max-content;
+  padding: 15px 25px;
+  background-color: blue;
+  color: white;
+  border: none;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 20px;
+}

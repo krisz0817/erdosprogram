@@ -1,0 +1,11 @@
+<section class="cards">
+  <div class="card-cont">
+
+    <div class="item" *ngFor="let leader of leaders">
+      <img alt="" src="{{ leader.img }}" />
+      <h2>{{ leader.title }} {{ leader.firstname }} {{ leader.lastname }}</h2>
+      <a target="_blank" href="{{leader.cv}}">Önéletrajz</a>
+    </div>
+
+  </div>
+</section>

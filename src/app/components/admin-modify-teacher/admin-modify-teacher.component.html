@@ -1,0 +1,50 @@
+<h2 style="padding: 0 50px; margin-top: 50px;">
+    Tanárok módosítása
+</h2>
+
+<form class="new_art">
+    <div class="data">
+        <div class="text">
+            <label id="art_title_lab" for="lead_title" class="input_lab">
+                Titulus:
+                <input [(ngModel)]="leader.title" type="text" name="lead_title" id="lead_title" placeholder="Dr">
+            </label>
+            <label id="art_title_lab" for="lead_firstname" class="input_lab">
+                Vezetéknév:
+                <input [(ngModel)]="leader.firstname" type="text" name="lead_firstname" id="lead_firstname" placeholder="Vezetéknév">
+            </label>
+            <label id="art_title_lab" for="lead_lastname" class="input_lab">
+                Keresztnév:
+                <input [(ngModel)]="leader.lastname" type="text" name="lead_lastname" id="lead_lastname" placeholder="Keresztnév">
+            </label>
+        </div>
+        <div class="text">
+            <label id="art_title_lab" for="lead_email" class="input_lab">
+                E-mail:
+                <input [(ngModel)]="leader.email" type="email" name="lead_email" id="lead_email" placeholder="eamil@email.hu">
+            </label>
+        </div>
+        <div class="text">
+            <label id="art_title_lab" for="lead_phone" class="input_lab">
+                Telefonszám:
+                <input [(ngModel)]="leader.phone" type="phone" name="lead_phone" id="lead_phone" placeholder="+36301234567">
+            </label>
+        </div>
+        <div class="cv_up">
+            <p>Önéletrajz hozzáadása</p>
+            <p>
+                * Csak .pdf elfogadott, maximum 25MB méretben!
+            </p>
+            <app-upload-files #cmp></app-upload-files>
+        </div>
+        <div class="img_up">
+            <p>Kép hozzáadása</p>
+            <p>
+                * Csak .jpg, .jpeg, .png elfogadott, maximum 25MB méretben!
+            </p>
+            <app-upload-files #cmp></app-upload-files>
+        </div>
+    </div>
+
+    <input (click)="modify()" type="submit" value="Módosítás">
+</form>

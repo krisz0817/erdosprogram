@@ -1,0 +1,117 @@
+.tarolo {
+  padding: 50px;
+  width: calc(100% - 100px);
+  height: 100%;
+}
+
+.container {
+  max-height: 550px;
+  overflow: auto;
+}
+
+.table_actions {
+  display: flex;
+  width: 100%;
+  background-color: blue;
+  color: #fff;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  button {
+    width: max-content;
+    height: max-content;
+    padding: 20px 20px;
+    border: none;
+    background-color: blue;
+    color: white;
+
+    &:hover {
+      background-color: rgb(0, 47, 255);
+    }
+  }
+
+  div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    input {
+      background-color: rgb(224, 229, 255);
+      color: rgb(0, 0, 0);
+      padding: 10px 10px;
+      border: none;
+      border-radius: 5px;
+      margin-left: 10px;
+
+      &::placeholder {
+        color: rgb(0, 0, 0);
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+  }
+}
+
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.element_row:hover {
+  background-color: whitesmoke;
+}
+
+#event_selector {
+  appearance: none;
+  display: block;
+  position: relative;
+  min-width: 250px;
+  min-height: max-content;
+  padding: 10px;
+  border: 1px solid blue;
+  margin-left: 25px;
+  background-color: rgb(224, 229, 255);
+  border-radius: 5px;
+
+  background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 17px) calc(1em + 2px),
+    calc(100% - 12px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+
+  &:focus-visible {
+    outline: 2px solid blue;
+  }
+}
+#emailArea1{
+display: none;
+}
+#emailArea2{
+display: none;
+}
+
+
+tr td {
+  max-width: 250px;
+}
+
+.room-number {
+  margin: auto 15px;
+}

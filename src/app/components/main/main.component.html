@@ -1,0 +1,80 @@
+<div class="menu-container">
+  <div class="menu">
+    <div class="header">
+      <div>
+        <a routerLink="/"><img src="../../../assets/erdos_jo.png" alt="erdos_logo" style="object-fit: contain;"></a>
+        <a target="_blank" href="https://www.tuxera.com/" class="header_logos"><img src="../../../assets/Tuxera_notagline_RGB.jpg" alt="tuxera"></a>
+        <a target="_blank" href="https://mik.uni-pannon.hu/" class="header_logos"><img src="../../../assets/PE_cimer_nev_alatta.png" alt="pannon"></a>
+        <a target="_blank" href="https://zalamat.hu/" class="header_logos"><img src="../../../assets/mate.png" alt="zalamat"></a>
+        <a target="_blank" href="https://tehetseg.hu/tehetsegpontok" class="header_logos"><img src="../../../assets/akkreditalt_kivalo_tehetsegpont.png" alt="tehetseg"></a>
+        <a target="_blank" href="http://www.evopro.hu/hu" class="header_logos"><img src="../../../assets/evopro-logo.png" alt="evopro"></a>
+        <a target="_blank" href="https://www.facebook.com/pemikveszprem/?ref=bookmarks" class="header_logos"><img src="../../../assets/facebook-logo.png" alt="facebook"></a>
+        <p>Az Erdős program támogatója a Pannon Egyetem.</p>
+      </div>
+
+      <div *ngIf="user.role_id == 0; then thenBlock else elseBlock"></div>
+      <ng-template #thenBlock><a id="login" href="login">Bejelentkezés</a></ng-template>
+      <ng-template #elseBlock>
+        <div class="dropdown">
+          <span>{{ user.firstname }} {{ user.lastname }} <mat-icon>keyboard_arrow_down</mat-icon></span>
+          <div class="dropdown-content">
+            <a routerLink="admin/cikkek" *ngIf="user.role_id==1">Admin</a>
+            <a routerLink="user-profil">Profil</a>
+            <a (click)="logout()">Kijelentkezés</a>
+          </div>
+        </div>
+      </ng-template>
+
+    </div>
+    <a href="#" class="menu-mobile"><mat-icon>menu</mat-icon></a>
+    <ul class="clearfix">
+      <li><a routerLink="">Főoldal</a></li>
+      <li><a>Információk</a>
+        <ul>
+          <li><a routerLink="erdos_pal_eletrajz">Erdős Pál önéletrajz</a></li>
+          <li><a routerLink="a_program_celja">A program célja</a></li>
+          <li><a routerLink="vezetok">Vezetők</a></li>
+          <li><a routerLink="tanarok">Tanárok</a></li>
+          <li><a routerLink="partnerek">Partnerek</a></li>
+        </ul>
+      </li>
+      <li><a>Dokumentumok</a>
+        <ul>
+          <li><a routerLink="galeria">Galéria</a></li>
+          <li><a routerLink="szabalyzatok">Szabályzatok</a></li>
+        </ul>
+      </li>
+      <li><a>Foglalkozások</a>
+        <ul>
+          <li><a routerLink="informaciok">Információk</a></li>
+          <li><a routerLink="jelentkezes_foglalkozasra">Jelentkezés foglalkozásra</a></li>
+        </ul>
+      </li>
+      <li><a>Pólya György Díj</a>
+        <ul>
+          <li><a routerLink="felhivas">Felhívás</a></li>
+          <li><a routerLink="adomanyozas_rendje">Adományozás rendje</a></li>
+          <li><a routerLink="dijazottak">Díjazottak</a></li>
+        </ul>
+      </li>
+      <li><a routerLink="rolunk_irtak">Rólunk írták</a></li>
+    </ul>
+  </div>
+</div>
+  <router-outlet></router-outlet>
+
+<footer>
+  <div class="text">
+    <h3>{{ contact_name }}</h3>
+    <hr>
+    <p>
+      Elérhetőségek:
+      <br><br>
+      {{ contact_address }} <br>
+      {{ contact_phone }}
+      <br><br>
+      Azonosító: <br>
+      {{ identifier }}
+    </p>
+  </div>
+</footer>

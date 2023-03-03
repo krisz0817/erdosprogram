@@ -1,0 +1,19 @@
+<h2 style="padding: 0 50px; margin-top: 50px;">
+    Galéria létrehozása
+  </h2>
+<label for="gallery_name">
+    Cím:
+    <input [(ngModel)]="gallery.title" type="text" name="gallery_name" id="gallery_name">
+</label>
+<label for="gallery_year">
+    Év:
+    <input [(ngModel)]="gallery.year" type="number" name="gallery_year" id="gallery_year">
+</label>
+<div class="img_up">
+    <p>Képek hozzáadása</p>
+    <p>
+        * Csak .jpg, .jpeg, .png elfogadott, maximum 25MB méretben!
+    </p>
+    <app-upload-files></app-upload-files>
+</div>
+<button (click)="create()">Létrehozás</button>

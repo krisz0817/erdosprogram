@@ -1,0 +1,112 @@
+.container {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  margin: 40px auto;
+
+  flex-direction: column;
+
+  .event {
+    padding: 20px;
+    width: calc(100% - 40px);
+    background-color: #F4F6F5;
+    margin-bottom: 25px;
+
+    .main_info {
+      display: flex;
+      width: 100%;
+
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .basic {
+        h1 {
+          margin: 0;
+        }
+
+        p {
+          margin: 0;
+        }
+      }
+
+      .dates {
+        font-weight: bold;
+        text-align: right;
+        font-size: 1.5em;
+
+        p{
+          margin-bottom: 5px;
+        }
+      }
+    }
+
+    .details {
+      display: flex;
+      width: 100%;
+      margin: 25px 0;
+
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      table {
+        margin-right: 15px;
+        min-width: 300px;
+        border-collapse: collapse;
+
+        thead {
+          background-color: blue;
+          color: #fff;
+          font-weight: 500;
+        }
+
+        tbody {
+          background-color: #fff;
+
+          tr:nth-child(2n + 2) {
+            background-color: #c8d9ea;
+          }
+        }
+
+        td {
+          padding: 5px;
+        }
+      }
+    }
+
+    .btn_cont {
+      width: fit-content;
+      margin-right: 0;
+      margin-left: auto;
+
+      button {
+        width: fit-content;
+        height: fit-content;
+        padding: 20px 30px;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.primary {
+  background-color: blue;
+  color: #fff;
+
+  &:hover {
+    background-color: rgb(24, 78, 255);
+  }
+}
+
+.secondary {
+  background-color: #F4F6F5;
+  color: #000;
+  margin-right: 10px;
+
+  &:hover {
+    background-color: #e5e6e5;
+  }
+}

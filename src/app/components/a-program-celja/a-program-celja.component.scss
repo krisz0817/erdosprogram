@@ -1,0 +1,21 @@
+.fs-article {
+  display: block;
+  position: relative;
+  width: 80%;
+  max-width: 1000px;
+  margin: 50px auto;
+
+  h2 {
+    font-size: 18px;
+  }
+  span {
+    display: block;
+    width: max-content;
+    margin: 0 auto;
+    font-size: 14px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}

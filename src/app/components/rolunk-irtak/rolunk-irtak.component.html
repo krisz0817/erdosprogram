@@ -1,0 +1,11 @@
+<section class="news">
+  <div class="item-cont">
+    <div class="item" *ngFor="let article of articles">
+      <hr>
+      <span>Forrás: <a href="{{ article.src }}" target="_blank">{{ article.src }}</a></span>
+      <h2>{{ article.title }}</h2>
+      <img *ngIf="article.img != null" alt = "{{ article.img }}" src="{{ article.img }}" />
+      <a [routerLink]="['/article', article.id]">Tovább</a>
+    </div>
+  </div>
+</section>

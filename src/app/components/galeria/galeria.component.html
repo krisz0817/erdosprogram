@@ -1,0 +1,11 @@
+<div class="gallery-year" *ngFor="let gallery of galleries">
+  <h2>{{gallery.year}}</h2>
+  <div class="cont">
+    <span *ngFor="let item of gallery.galleries;">
+      <a class="item" [routerLink]="['/galeria', item.id]">
+        <img src="{{item.images[0].name}}" />
+        <h3>{{item.title}}</h3>
+      </a>
+    </span>
+  </div>
+</div>

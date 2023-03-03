@@ -1,0 +1,72 @@
+.tarolo {
+    padding: 50px;
+    width: calc(100% - 100px);
+    height: 100%;
+  }
+  
+  .container {
+    max-height: 550px;
+    overflow: auto;
+  }
+  
+  .table_actions {
+    display: flex;
+    width: 100%;
+    background-color: blue;
+    color: #fff;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  
+    button {
+      width: max-content;
+      height: max-content;
+      padding: 20px 20px;
+      border: none;
+      background-color: blue;
+      color: white;
+  
+      &:hover {
+        background-color: rgb(0, 47, 255);
+      }
+    }
+  
+    div {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+  
+      input {
+        background-color: rgb(224, 229, 255);
+        color: rgb(0, 0, 0);
+        padding: 10px 10px;
+        border: none;
+        border-radius: 5px;
+        margin-left: 10px;
+  
+        &::placeholder {
+          color: rgb(0, 0, 0);
+        }
+  
+        &:focus-visible {
+          outline: none;
+        }
+      }
+    }
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  th.mat-sort-header-sorted {
+    color: black;
+  }
+  
+  .element_row:hover {
+    background-color: whitesmoke;
+  }
+  

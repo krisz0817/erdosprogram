@@ -1,0 +1,42 @@
+.gallery-year {
+  display: block;
+  position: relative;
+  width: 80%;
+  max-width: 1000px;
+  height: max-content;
+  margin: 0 auto;
+  margin-top: 50px;
+
+  h2 {
+    font-size: 18px;
+  }
+}
+
+.cont {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  overflow: auto;
+
+  span {  
+    margin-right: 25px;
+  }
+}
+
+.item {
+  width: 250px;
+  height: 250px;
+
+  img {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  h3 {
+    font-size: 14px;
+    margin: 0;
+    margin-top: 5px;
+  }
+}

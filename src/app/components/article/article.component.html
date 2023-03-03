@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="header" style="background: url('{{ article.img }}'); background-position: center; background-size: cover;">
+    <div class="header_data">
+      <p>{{ article.updatedAt }}</p>
+      <h1>{{ article.title }}</h1>
+    </div>
+  </div>
+  <p [innerHtml]="article.description | safeHtml">
+
+  </p>
+</div>

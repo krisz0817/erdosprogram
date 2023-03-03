@@ -1,0 +1,26 @@
+<div class="outer">
+  <div class="container">
+    <form>
+      <a routerLink=""><mat-icon>arrow_back</mat-icon></a>
+      <h1>Bejelentkezés</h1>
+
+      <label for="email" class="input_lab">
+        E-mail cím:
+        <input [(ngModel)]="email" type="email" name="email" id="email" placeholder="example@example.hu">
+      </label>
+      <label for="password" class="input_lab">
+        Jelszó:
+        <div class="password_cont">
+          <input [(ngModel)]="password" type="password" name="password" id="password">
+          <a id="password_btn"><mat-icon style="width: 12px; height: 12px; font-size: 12px; line-height: 12px; padding: 6px;">visibility</mat-icon> Jelszó mutatása</a>
+        </div>
+      </label>
+      <input type="submit" value="Bejelentkezés" (click)="login()">
+      <p class="error" id="error1">A keresett felhasználó nem létezik!</p>
+      <p class="error" id="error2">Felhasználója tiltásra került!</p>
+      <p class="error" id="error3">Hiba történt a bejelentkezés során!</p>
+    </form>
+    <p style="margin-top: 25px;">Még nincs fiókja? <a routerLink="/registration">Regisztráljon!</a></p>
+    <a routerLink="/forgot-password">Elfelejtettem a jelszavamat!</a>
+  </div>
+</div>

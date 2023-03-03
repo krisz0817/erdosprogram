@@ -1,0 +1,92 @@
+<div class="tarolo">
+  <h1>Foglalkozások</h1>
+  <div class="mat-elevation-z8">
+    <div class="table_actions">
+      <div>
+        <span style="margin-left: 35px;">{{selection.selected.length}} kiválasztva</span>
+        <button (click)="delete()" style="margin-left: 35px;">Törlés</button>
+        <button (click)="export()">Export</button>
+        <button (click)="activate()">Jelentkezés jóváhagyása</button>
+        <button (click)="deactivate()">Jelentkezés tiltása</button>
+        <button (click)="send()">Számla küldése</button>
+        <button (click)="sendMails()">Csoportos üzenet</button>
+        <button (click)="deactivate2()">Foglalkozás lezárása</button>
+        <input type="search" name="search" id="search" placeholder="Keresés" (keyup)="applyFilter($event)" style="min-width: 100px; width: 200px" #searchInput>
+        <select [(ngModel)]="selectedEvent" name="event_selector" id="event_selector" for="event_selector" (change)="selectorChange()" title="event_selector">
+          <option *ngFor="let event of events" value="{{event.id}}">{{event.name}}, {{event.location}}</option>
+        </select>
+        <p class="room-number">Péntek szállás: {{friday}}</p>
+        <p class="room-number">Szombat szállás: {{saturday}}</p>
+      </div>
+    </div>
+    <div class="container">
+      <table mat-table [dataSource]="dataSource" matSort>
+
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+          <th mat-header-cell *matHeaderCellDef>
+            <mat-checkbox (change)="$event ? toggleAllRows() : null"
+                          [checked]="selection.hasValue() && isAllSelected()"
+                          [indeterminate]="selection.hasValue() && !isAllSelected()"
+                          [aria-label]="checkboxLabel()"
+                          color="primary">
+            </mat-checkbox>
+          </th>
+          <td mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? selection.toggle(row) : null"
+                          [checked]="selection.isSelected(row)"
+                          [aria-label]="checkboxLabel(row)"
+                          color="primary">
+            </mat-checkbox>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Név </th>
+          <td mat-cell *matCellDef="let element"> {{element.firstname}} {{element.lastname}} </td>
+        </ng-container>
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> E-mail cím </th>
+          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Fizetendő </th>
+          <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Állapot </th>
+          <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+            (click)="selection.toggle(row)"
+            class="element_row">
+        </tr>
+
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="5">Nincs a keresésnek megfelelő adat! Keresés: "{{searchInput.value}}"</td>
+        </tr>
+      </table>
+    </div>
+    <mat-paginator [pageSizeOptions]="[10, 25, 50]"
+      showFirstLastButtons
+      aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+  <div id="emailArea1" class="emailarea1">
+    <app-text-editor #cmp id="emailInput" class="emailInput" [(ngModel)]="mailText"></app-text-editor>
+    <div class="img_up">
+      <p>Csatolmány hozzáadása<p>
+      <app-upload-files></app-upload-files>
+  </div>
+    <button (click)="sendEmail()">Küldés</button>
+  </div>
+  <div id="emailArea2" class="emailArea2">
+    <app-text-editor #cmp id="emailInput" class="emailInput" [(ngModel)]="mailText"></app-text-editor>
+    <button (click)="sendGroupEmail()">Küldés</button>
+  </div>
+</div>
