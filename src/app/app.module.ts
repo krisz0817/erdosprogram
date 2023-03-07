@@ -64,6 +64,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { RegistrationCompleteComponent } from './components/registration-complete/registration-complete.component';
 import { JoinCompleteComponent } from './components/join-complete/join-complete.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { TamogatokComponent } from './components/tamogatok/tamogatok.component';
 
 
 @NgModule({
@@ -123,7 +124,8 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     PageNotFoundComponent,
     RegistrationCompleteComponent,
     JoinCompleteComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    TamogatokComponent
   ],
   imports: [
     BrowserModule,

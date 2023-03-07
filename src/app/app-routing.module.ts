@@ -51,6 +51,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { RolunkIrtakComponent } from './components/rolunk-irtak/rolunk-irtak.component';
 import { SelectedGalleryComponent } from './components/selected-gallery/selected-gallery.component';
 import { SzabalyzatokComponent } from './components/szabalyzatok/szabalyzatok.component';
+import { TamogatokComponent } from './components/tamogatok/tamogatok.component';
 import { TanarokComponent } from './components/tanarok/tanarok.component';
 import { UploadFilesComponent } from './components/upload-files/upload-files.component';
 import { UserProfilComponent } from './components/user-profil/user-profil.component';
@@ -75,6 +76,7 @@ const routes: Routes = [
     {path: 'adomanyozas_rendje', component: AdomanyozasRendjeComponent},
     {path: 'dijazottak', component: DijazottakComponent},
     {path: 'rolunk_irtak', component: RolunkIrtakComponent},
+    {path: 'tamogatok', component: TamogatokComponent},
     {path: 'dijak', component: DijakComponent},
     {path: 'article/:id', component: ArticleComponent},
     {path: 'galeria/:id', component: SelectedGalleryComponent},

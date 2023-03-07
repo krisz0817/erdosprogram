@@ -3,13 +3,6 @@
     <div class="header">
       <div>
         <a routerLink="/"><img src="../../../assets/erdos_jo.png" alt="erdos_logo" style="object-fit: contain;"></a>
-        <a target="_blank" href="https://www.tuxera.com/" class="header_logos"><img src="../../../assets/Tuxera_notagline_RGB.jpg" alt="tuxera"></a>
-        <a target="_blank" href="https://mik.uni-pannon.hu/" class="header_logos"><img src="../../../assets/PE_cimer_nev_alatta.png" alt="pannon"></a>
-        <a target="_blank" href="https://zalamat.hu/" class="header_logos"><img src="../../../assets/mate.png" alt="zalamat"></a>
-        <a target="_blank" href="https://tehetseg.hu/tehetsegpontok" class="header_logos"><img src="../../../assets/akkreditalt_kivalo_tehetsegpont.png" alt="tehetseg"></a>
-        <a target="_blank" href="http://www.evopro.hu/hu" class="header_logos"><img src="../../../assets/evopro-logo.png" alt="evopro"></a>
-        <a target="_blank" href="https://www.facebook.com/pemikveszprem/?ref=bookmarks" class="header_logos"><img src="../../../assets/facebook-logo.png" alt="facebook"></a>
-        <p>Az Erdős program támogatója a Pannon Egyetem.</p>
       </div>
 
       <div *ngIf="user.role_id == 0; then thenBlock else elseBlock"></div>
@@ -58,6 +51,7 @@
         </ul>
       </li>
       <li><a routerLink="rolunk_irtak">Rólunk írták</a></li>
+      <li><a routerLink="tamogatok">Támogatók</a></li>
     </ul>
   </div>
 </div>
